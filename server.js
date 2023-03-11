@@ -63,7 +63,7 @@ app.get("/shopify", (req, res) => {
       const providedHmac = Buffer.from(hmac, "utf-8");
       const generatedHash = Buffer.from(
         crypto
-          .createHmac("sh256", password)
+          .createHmac("sha256", password)
           .update(message)
           .digest("hex"),
         "utf-8"
